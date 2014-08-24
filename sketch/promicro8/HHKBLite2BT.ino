@@ -96,12 +96,12 @@ const boolean COL_SWEAPBITS[COL][4] =
    { LOW,HIGH, LOW,HIGH},  // output O5
    { LOW,HIGH,HIGH, LOW},  // output O6
    { LOW,HIGH,HIGH,HIGH},  // output O7
-   {HIGH, LOW, LOW, LOW}}; // output O8
+   {HIGH, LOW, LOW, LOW},  // output O8
    {HIGH,HIGH, LOW,HIGH},  // output O13
    {HIGH,HIGH, LOW, LOW},  // output O12
    {HIGH,HIGH,HIGH,HIGH},  // output O15
    {HIGH,HIGH,HIGH, LOW},  // output O14
-   {HIGH, LOW, LOW,HIGH},  // output O9
+   {HIGH, LOW, LOW,HIGH}};  // output O9
 
 const boolean ROW_SWEAPBITS[ROW][3] =
   //   C    B    A

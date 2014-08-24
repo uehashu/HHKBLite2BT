@@ -15,12 +15,12 @@ ARDUINO_LIBS =
 ARDUINO_PORT = /dev/cu.usb*
 
 ifeq (${UNAME},Darwin)
-	ARDMK_PATH = ../Arduino-Makefile/bin
-	ARDMK_DIR = ../Arduino-Makefile
-	AVRDUDE_DIR = /usr/local/Cellar/avrdude/6.0.1
+	ARDMK_DIR = ~/sketchbook/Arduino-Makefile
+	ARDMK_PATH = $(ARDMK_DIR)/bin
+	#AVRDUDE_DIR = /usr/local/Cellar/avrdude/6.0.1
 	AVR_TOOLS_DIR = $(ARDUINO_DIR)/hardware/tools/avr
-	AVRDUDE = $(AVRDUDE_DIR)/bin/avrdude
-	AVRDUDE_CONF = $(AVRDUDE_DIR)/etc/avrdude.conf
+	AVRDUDE = /usr/local/bin/avrdude
+	AVRDUDE_CONF = /usr/local/etc/avrdude.conf
 	include $(ARDMK_DIR)/Arduino.mk
 endif
 ifeq (${UNAME},Linux)
