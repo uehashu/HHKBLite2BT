@@ -13009,14 +13009,14 @@ Company: Microchip (Roving) cld.</description>
 <library name="5204">
 <packages>
 <package name="52045-1445">
-<pad name="1" x="0" y="0" drill="0.85" shape="octagon"/>
-<pad name="2" x="1.25" y="2.5" drill="0.85" shape="octagon"/>
-<pad name="3" x="2.5" y="0" drill="0.85" shape="octagon"/>
-<pad name="4" x="3.75" y="2.5" drill="0.85" shape="octagon"/>
-<pad name="5" x="5" y="0" drill="0.85" shape="octagon"/>
-<pad name="6" x="6.25" y="2.5" drill="0.85" shape="octagon"/>
-<pad name="7" x="7.5" y="0" drill="0.85" shape="octagon"/>
-<pad name="8" x="8.75" y="2.5" drill="0.85" shape="octagon"/>
+<pad name="1" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="2" x="1.25" y="2.5" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="2.5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="4" x="3.75" y="2.5" drill="0.8128" shape="long" rot="R90"/>
+<pad name="5" x="5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="6" x="6.25" y="2.5" drill="0.8128" shape="long" rot="R90"/>
+<pad name="7" x="7.5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="8" x="8.75" y="2.5" drill="0.8128" shape="long" rot="R90"/>
 <wire x1="-2.325" y1="0.5" x2="-2.325" y2="4.325" width="0.127" layer="21"/>
 <wire x1="-2.325" y1="0.5" x2="-0.25" y2="0.5" width="0.127" layer="21"/>
 <wire x1="-0.25" y1="0.5" x2="0.25" y2="0.5" width="0.127" layer="21"/>
@@ -13079,12 +13079,12 @@ Company: Microchip (Roving) cld.</description>
 <wire x1="9" y1="3.25" x2="9" y2="2.625" width="0.127" layer="21"/>
 <wire x1="9" y1="2.625" x2="8.5" y2="2.625" width="0.127" layer="21"/>
 <wire x1="8.5" y1="2.625" x2="8.5" y2="3.25" width="0.127" layer="21"/>
-<pad name="9" x="10" y="0" drill="0.85" shape="octagon"/>
-<pad name="10" x="11.25" y="2.5" drill="0.85" shape="octagon"/>
-<pad name="11" x="12.5" y="0" drill="0.85" shape="octagon"/>
-<pad name="12" x="13.75" y="2.5" drill="0.85" shape="octagon"/>
-<pad name="13" x="15" y="0" drill="0.85" shape="octagon"/>
-<pad name="14" x="16.25" y="2.5" drill="0.85" shape="octagon"/>
+<pad name="9" x="10" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="10" x="11.25" y="2.5" drill="0.8128" shape="long" rot="R90"/>
+<pad name="11" x="12.5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="12" x="13.75" y="2.5" drill="0.8128" shape="long" rot="R90"/>
+<pad name="13" x="15" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="14" x="16.25" y="2.5" drill="0.8128" shape="long" rot="R90"/>
 <wire x1="7.75" y1="0.5" x2="18.575" y2="0.5" width="0.127" layer="21"/>
 <wire x1="18.575" y1="0.5" x2="18.575" y2="5.6" width="0.127" layer="21"/>
 <wire x1="17.45" y1="2.325" x2="17.45" y2="2.775" width="0.127" layer="21"/>
@@ -13128,14 +13128,14 @@ Company: Microchip (Roving) cld.</description>
 <text x="6.35" y="6.35" size="1.27" layer="25">&gt;NAME</text>
 </package>
 <package name="52045-0845">
-<pad name="1" x="0" y="0" drill="0.85" shape="octagon"/>
-<pad name="2" x="1.25" y="2.5" drill="0.85" shape="octagon"/>
-<pad name="3" x="2.5" y="0" drill="0.85" shape="octagon"/>
-<pad name="4" x="3.75" y="2.5" drill="0.85" shape="octagon"/>
-<pad name="5" x="5" y="0" drill="0.85" shape="octagon"/>
-<pad name="6" x="6.25" y="2.5" drill="0.85" shape="octagon"/>
-<pad name="7" x="7.5" y="0" drill="0.85" shape="octagon"/>
-<pad name="8" x="8.75" y="2.5" drill="0.85" shape="octagon"/>
+<pad name="1" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="2" x="1.25" y="2.5" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="2.5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="4" x="3.75" y="2.5" drill="0.8128" shape="long" rot="R90"/>
+<pad name="5" x="5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="6" x="6.25" y="2.5" drill="0.8128" shape="long" rot="R90"/>
+<pad name="7" x="7.5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="8" x="8.75" y="2.5" drill="0.8128" shape="long" rot="R90"/>
 <wire x1="-2.325" y1="0.5" x2="-2.325" y2="4.325" width="0.127" layer="21"/>
 <wire x1="-2.325" y1="0.5" x2="-0.25" y2="0.5" width="0.127" layer="21"/>
 <wire x1="-0.25" y1="0.5" x2="0.25" y2="0.5" width="0.127" layer="21"/>
@@ -16743,17 +16743,15 @@ type 0309, grid 2.5 mm</description>
 <clearance class="0" value="0.254"/>
 </class>
 <class number="1" name="Vcc" width="0.0254" drill="0">
-<clearance class="0" value="0.508"/>
+<clearance class="1" value="0.205"/>
 </class>
 <class number="2" name="VccSrc" width="0" drill="0">
-<clearance class="0" value="0.508"/>
-<clearance class="1" value="0.508"/>
 <clearance class="2" value="0.508"/>
 </class>
 <class number="3" name="GND" width="0" drill="0">
-<clearance class="0" value="0.3048"/>
 <clearance class="1" value="0.508"/>
 <clearance class="2" value="0.508"/>
+<clearance class="3" value="0.205"/>
 </class>
 </classes>
 <parts>
@@ -16815,7 +16813,6 @@ type 0309, grid 2.5 mm</description>
 <part name="C1" library="rcl" deviceset="C-US" device="050-024X044" value="0.1uF"/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" deviceset="GND" device=""/>
-<part name="J3" library="jumper" deviceset="J" device="7MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -16882,7 +16879,6 @@ type 0309, grid 2.5 mm</description>
 <instance part="C1" gate="G$1" x="71.12" y="116.84"/>
 <instance part="SUPPLY8" gate="GND" x="71.12" y="106.68"/>
 <instance part="SUPPLY9" gate="GND" x="215.9" y="38.1"/>
-<instance part="J3" gate="1" x="223.52" y="55.88"/>
 </instances>
 <busses>
 <bus name="CON2BUS_D[0..7]">
@@ -17010,21 +17006,13 @@ type 0309, grid 2.5 mm</description>
 <segment>
 <pinref part="SUPPLY9" gate="GND" pin="GND"/>
 <wire x1="215.9" y1="40.64" x2="215.9" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="J3" gate="1" pin="1"/>
 <wire x1="215.9" y1="43.18" x2="215.9" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="215.9" y1="48.26" x2="215.9" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="215.9" y1="55.88" x2="218.44" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="J4" gate="1" pin="1"/>
 <wire x1="218.44" y1="48.26" x2="215.9" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="215.9" y1="43.18" x2="231.14" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="231.14" y1="43.18" x2="231.14" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="J3" gate="1" pin="2"/>
-<wire x1="231.14" y1="48.26" x2="231.14" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="55.88" x2="228.6" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="J4" gate="1" pin="2"/>
 <wire x1="228.6" y1="48.26" x2="231.14" y2="48.26" width="0.1524" layer="91"/>
-<junction x="215.9" y="48.26"/>
-<junction x="231.14" y="48.26"/>
 <junction x="215.9" y="43.18"/>
 </segment>
 </net>
@@ -17067,7 +17055,7 @@ type 0309, grid 2.5 mm</description>
 <wire x1="83.82" y1="45.72" x2="81.28" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="2">
+<net name="VCC_SRC" class="2">
 <segment>
 <pinref part="C3" gate="G$1" pin="+"/>
 <wire x1="-2.54" y1="119.38" x2="-2.54" y2="121.92" width="0.1524" layer="91"/>
@@ -17083,9 +17071,7 @@ type 0309, grid 2.5 mm</description>
 <wire x1="-2.54" y1="121.92" x2="0" y2="121.92" width="0.1524" layer="91"/>
 <junction x="-2.54" y="121.92"/>
 <wire x1="48.26" y1="12.7" x2="48.26" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="D3"/>
-<wire x1="187.96" y1="12.7" x2="187.96" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="33.02" x2="149.86" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="12.7" x2="187.96" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="12.7" x2="63.5" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="J1" gate="1" pin="2"/>
 <wire x1="63.5" y1="12.7" x2="60.96" y2="12.7" width="0.1524" layer="91"/>
@@ -17093,6 +17079,8 @@ type 0309, grid 2.5 mm</description>
 <wire x1="63.5" y1="17.78" x2="63.5" y2="12.7" width="0.1524" layer="91"/>
 <junction x="48.26" y="12.7"/>
 <junction x="63.5" y="12.7"/>
+<pinref part="U$2" gate="G$1" pin="D4(A6)"/>
+<wire x1="149.86" y1="35.56" x2="187.96" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$49" class="0">

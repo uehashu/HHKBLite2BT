@@ -37,16 +37,16 @@
 // Contraints //
 ////////////////
 
-#define BT_RXPIN 2 // connect to TX on RN-42
-#define BT_TXPIN 3 // connect to RX on RN-42
+#define BT_RXPIN 19 // connect to TX on RN-42
+#define BT_TXPIN 18 // connect to RX on RN-42
+#define BT_RESETPIN 20 // RN-42 reset pin. active low.
 #define BT_BAUDRATE 9600
 #define AR_BAUDRATE 9600
 
-#define BT_RESETPIN 12 // RN-42 reset pin. active low.
-#define BUTTERY_LEDPIN 13 // buttery status led pin.
+#define BUTTERY_LEDPIN 2 // buttery status led pin.
 
-#define BUTTERY_READPIN 0 // reading pin of buttery voltage.
-#define VCC_VOLTAGE 5 // supply voltage
+#define BUTTERY_READPIN 4 // reading pin of buttery voltage.
+#define VCC_VOLTAGE 3.3 // supply voltage
 #define BUTTERY_THRESH_VOLTAGE 2 // buttery threshold voltage. Indicate LED.
 #define BUTTERY_CHECKINTERVAL_MS 5000 // check interval in millis of buttery voltage.
 
@@ -55,16 +55,16 @@
 #define MOD 8
 
 // To connect HEF4514B
-#define COL_SELECTPIN0 13 // pin A0
-#define COL_SELECTPIN1 11 // pin A1
-#define COL_SELECTPIN2 10 // pin A2
-#define COL_SELECTPIN3 12 // pin A3
+#define COL_SELECTPIN0 10 // pin A0
+#define COL_SELECTPIN1 14 // pin A1
+#define COL_SELECTPIN2 15 // pin A2
+#define COL_SELECTPIN3 16 // pin A3
 
 // To connect CD4512BP
-#define ROW_SELECTPIN0 5 // pin A
-#define ROW_SELECTPIN1 4 // pin B
-#define ROW_SELECTPIN2 3 // pin C
-#define ROW_INPUTPIN   2 // input
+#define ROW_SELECTPIN0 9 // pin A
+#define ROW_SELECTPIN1 8 // pin B
+#define ROW_SELECTPIN2 7 // pin C
+#define ROW_INPUTPIN   6 // input
 
 // Function key(fn) position
 #define FNKEY_POSITION_COL 1
