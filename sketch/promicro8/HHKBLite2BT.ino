@@ -86,7 +86,7 @@ const int ROW_SELECTPINS[3] =
    ROW_SELECTPIN1, 
    ROW_SELECTPIN0};
 
-const boolean COL_SWEAPBITS[COL][4] = 
+const boolean COL_SWEEPBITS[COL][4] = 
   //  A3   A2   A1   A0
   {{ LOW, LOW, LOW, LOW},  // output O0
    { LOW, LOW,HIGH, LOW},  // output O2
@@ -103,7 +103,7 @@ const boolean COL_SWEAPBITS[COL][4] =
    {HIGH,HIGH,HIGH, LOW},  // output O14
    {HIGH, LOW, LOW,HIGH}};  // output O9
 
-const boolean ROW_SWEAPBITS[ROW][3] =
+const boolean ROW_SWEEPBITS[ROW][3] =
   //   C    B    A
   {{HIGH,HIGH,HIGH},   // output D7
    {HIGH,HIGH, LOW},   // output D6
@@ -350,17 +350,17 @@ void loop(){
 // Other functions //
 /////////////////////
 
-// This function return true if key(col,row) is pressed.
-// In notice, when key sweaping, if col selector is locked, 
-// it can sweap speedy.
+// This function returns true if key(col,row) is pressed.
+// In notice, when key sweeping, if col selector is locked, 
+// it can sweep speedy.
 // It's treading off of speed and readable.
 boolean keyPressed(int col, int row){
   // set selector bits.
   for(int i=0;i<4;i++){
-    digitalWrite(COL_SELECTPINS[i],COL_SWEAPBITS[col][i]);
+    digitalWrite(COL_SELECTPINS[i],COL_SWEEPBITS[col][i]);
   }
   for(int i=0;i<3;i++){
-    digitalWrite(ROW_SELECTPINS[i],ROW_SWEAPBITS[row][i]);
+    digitalWrite(ROW_SELECTPINS[i],ROW_SWEEPBITS[row][i]);
   }
   
   if(digitalRead(ROW_INPUTPIN)==HIGH){
@@ -371,7 +371,7 @@ boolean keyPressed(int col, int row){
 }
 
 
-// This function return key code from column and row number.
+// This function returns key code from column and row number.
 // Fnkey switches key matrix.
 byte getKeyCodeFromColAndRow(int col, int row, boolean fnEnable){
   if(fnEnable){
@@ -382,7 +382,7 @@ byte getKeyCodeFromColAndRow(int col, int row, boolean fnEnable){
 }
 
 
-// This function return true if key state is changed.
+// This function returns true if key state is changed.
 boolean keyStateIsChanged(byte modifierData, byte keyData[6]){
   // check modifier.
   if(modifierData != previousModifierData){
@@ -397,7 +397,7 @@ boolean keyStateIsChanged(byte modifierData, byte keyData[6]){
 }
 
 
-// This function sweap and send key report in HID mode.
+// This function sweeps and sends key report in HID mode.
 void sendReportHID(){
   boolean fnEnable = false;
   int keyCounter = 0;
