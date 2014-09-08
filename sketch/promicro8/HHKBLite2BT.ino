@@ -39,6 +39,7 @@
 
 #define BT_RXPIN 19 // connect to TX on RN-42
 #define BT_TXPIN 18 // connect to RX on RN-42
+#define GPIO2 18 // connect to GPIO2 on RN-42. GPIO2 indicate connect status.
 #define BT_RESETPIN 20 // RN-42 reset pin. active low.
 #define BT_BAUDRATE 9600
 #define AR_BAUDRATE 9600
@@ -47,7 +48,7 @@
 
 #define BUTTERY_READPIN 4 // reading pin of buttery voltage.
 #define VCC_VOLTAGE 3.3 // supply voltage
-#define RESET_SWITCH 3 // reset switch
+#define RESET_SWITCH 1 // reset switch
 #define BUTTERY_THRESH_VOLTAGE 2 // buttery threshold voltage. Indicate LED.
 #define BUTTERY_CHECKINTERVAL_MS 5000 // check interval in millis of buttery voltage.
 
@@ -158,6 +159,9 @@ boolean keyStateIsChanged(byte,byte[6]);
 void sendReportHID();
 void resetBT();
 void indicateButteryAlert();
+boolean isConnected();
+void enableResetStatus();
+void resetAndEraseAddress();
 
 
 //////////////////////
@@ -171,7 +175,7 @@ byte previousKeySPP = 0x00;
 boolean isBTMode = true;
 unsigned long previousSendDate;
 unsigned long previousButteryCheckDate;
-
+volatile boolean resetStatus = false;
 
 ///////////
 // Setup //
@@ -200,7 +204,10 @@ void setup(){
 
   // set pin to reset switch reader with pullup resistor.
   pinMode(RESET_SWITCH,INPUT_PULLUP);
-
+  
+  // attach intterupt function on resetting status.
+  attachInterrupt(3,enableResetStatus,LOW);
+  
   softwareSerial.begin(BT_BAUDRATE);
 #ifdef DEBUG
   Serial.begin(AR_BAUDRATE);
@@ -316,7 +323,7 @@ void setup(){
   
   previousSendDate = millis();
   previousButteryCheckDate = millis();
-
+  
 }
 
 
@@ -326,20 +333,35 @@ void setup(){
 //////////
 
 void loop(){
-  while(millis() - previousSendDate < WITINGMS){
-    delayMicroseconds(100);
-  }
-  // even if timer is reset, this condition tree is correct.
-  // (little faster than WITINGMS...)
   
-  previousSendDate = millis();
-  
+  while((isConnected() == true) && (resetStatus == false)){
+    while(millis() - previousSendDate < WITINGMS){
+      delayMicroseconds(100);
+    }
+    // even if timer is reset, this condition tree is correct.
+    // (little faster than WITINGMS...)
+    
+    previousSendDate = millis();
+    
 #ifdef DEBUG
-  Serial.flush();
+    Serial.flush();
 #endif
+    
+    softwareSerial.flush();
+    sendReportHID();
+    
+    // buttery check.
+    if(millis() - previousButteryCheckDate > BUTTERY_CHECKINTERVAL_MS){
+      indicateButteryAlert();
+      previousButteryCheckDate = millis();
+    }
+  }
   
-  softwareSerial.flush();
-  sendReportHID();
+  // If ResetStatus is set, reset RN-42 and erase stored address.
+  if(resetStatus == true){
+    resetStatus = false;
+    resetAndEraseAddress();
+  }
   
   // buttery check.
   if(millis() - previousButteryCheckDate > BUTTERY_CHECKINTERVAL_MS){
@@ -490,4 +512,56 @@ void indicateButteryAlert(){
   if(voltage < BUTTERY_THRESHOLD){
     digitalWrite(BUTTERY_LEDPIN,HIGH);
   }
+}
+
+
+// This function returns true if bluetooth module is connected.
+// Notice that this system use PULLUP, then truth-value is reflected.
+boolean isConnected(){
+  if(digitalRead(GPIO2) == LOW){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+
+// This function is changed value "ResetStatus".
+// This is called in interrupt function when reset switch is set High.
+void enableResetStatus(){
+  resetStatus = true;
+}
+
+
+// This function reset RN-42 and erase storead address.
+void resetAndEraseAddress(){
+  resetBT();
+  softwareSerial.flush();
+  delay(100);
+#ifdef DEBUG
+  while(softwareSerial.available()){
+    Serial.write(softwareSerial.read());
+  }
+  delay(200);
+#endif
+  
+  softwareSerial.print("$$$");
+  delay(200);
+#ifdef DEBUG
+  while(softwareSerial.available()){
+    Serial.write(softwareSerial.read());
+  }
+  delay(200);
+#endif
+  
+  softwareSerial.print("SR,Z\r");
+  delay(200);
+#ifdef DEBUG
+  while(softwareSerial.available()){
+    Serial.write(softwareSerial.read());
+  }
+  delay(200);
+#endif
+  
+  softwareSerial.flush();
 }
