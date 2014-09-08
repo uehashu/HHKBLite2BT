@@ -16813,6 +16813,9 @@ type 0309, grid 2.5 mm</description>
 <part name="C1" library="rcl" deviceset="C-US" device="050-024X044" value="0.1uF"/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" deviceset="GND" device=""/>
+<part name="RESET_SWITCH" library="pinhead" deviceset="PINHD-1X2" device=""/>
+<part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
+<part name="J3" library="jumper" deviceset="J" device="7MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -16879,6 +16882,9 @@ type 0309, grid 2.5 mm</description>
 <instance part="C1" gate="G$1" x="71.12" y="116.84"/>
 <instance part="SUPPLY8" gate="GND" x="71.12" y="106.68"/>
 <instance part="SUPPLY9" gate="GND" x="215.9" y="38.1"/>
+<instance part="RESET_SWITCH" gate="G$1" x="198.12" y="22.86"/>
+<instance part="SUPPLY3" gate="GND" x="187.96" y="17.78"/>
+<instance part="J3" gate="1" x="180.34" y="33.02"/>
 </instances>
 <busses>
 <bus name="CON2BUS_D[0..7]">
@@ -17015,6 +17021,12 @@ type 0309, grid 2.5 mm</description>
 <wire x1="228.6" y1="48.26" x2="231.14" y2="48.26" width="0.1524" layer="91"/>
 <junction x="215.9" y="43.18"/>
 </segment>
+<segment>
+<pinref part="RESET_SWITCH" gate="G$1" pin="2"/>
+<wire x1="195.58" y1="22.86" x2="187.96" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="22.86" x2="187.96" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="SUPPLY3" gate="GND" pin="GND"/>
+</segment>
 </net>
 <net name="N$3" class="2">
 <segment>
@@ -17071,8 +17083,8 @@ type 0309, grid 2.5 mm</description>
 <wire x1="-2.54" y1="121.92" x2="0" y2="121.92" width="0.1524" layer="91"/>
 <junction x="-2.54" y="121.92"/>
 <wire x1="48.26" y1="12.7" x2="48.26" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="12.7" x2="187.96" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="12.7" x2="63.5" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="12.7" x2="210.82" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="12.7" x2="63.5" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="J1" gate="1" pin="2"/>
 <wire x1="63.5" y1="12.7" x2="60.96" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="17.78" x2="63.5" y2="17.78" width="0.1524" layer="91"/>
@@ -17080,7 +17092,7 @@ type 0309, grid 2.5 mm</description>
 <junction x="48.26" y="12.7"/>
 <junction x="63.5" y="12.7"/>
 <pinref part="U$2" gate="G$1" pin="D4(A6)"/>
-<wire x1="149.86" y1="35.56" x2="187.96" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="35.56" x2="210.82" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$49" class="0">
@@ -17587,6 +17599,22 @@ type 0309, grid 2.5 mm</description>
 <pinref part="U$1" gate="G$1" pin="UART_RX"/>
 <pinref part="U$2" gate="G$1" pin="D19(A1)"/>
 <wire x1="81.28" y1="40.64" x2="109.22" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<wire x1="187.96" y1="33.02" x2="187.96" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="RESET_SWITCH" gate="G$1" pin="1"/>
+<wire x1="187.96" y1="25.4" x2="195.58" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="J3" gate="1" pin="2"/>
+<wire x1="185.42" y1="33.02" x2="187.96" y2="33.02" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="D3"/>
+<pinref part="J3" gate="1" pin="1"/>
+<wire x1="149.86" y1="33.02" x2="175.26" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

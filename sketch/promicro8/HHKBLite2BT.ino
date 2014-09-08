@@ -47,6 +47,7 @@
 
 #define BUTTERY_READPIN 4 // reading pin of buttery voltage.
 #define VCC_VOLTAGE 3.3 // supply voltage
+#define RESET_SWITCH 3 // reset switch
 #define BUTTERY_THRESH_VOLTAGE 2 // buttery threshold voltage. Indicate LED.
 #define BUTTERY_CHECKINTERVAL_MS 5000 // check interval in millis of buttery voltage.
 
@@ -188,7 +189,7 @@ void setup(){
   pinMode(ROW_SELECTPIN0,OUTPUT);
   pinMode(ROW_SELECTPIN1,OUTPUT);
   pinMode(ROW_SELECTPIN2,OUTPUT);
-  pinMode(ROW_INPUTPIN,INPUT);
+  pinMode(ROW_INPUTPIN,INPUT_PULLUP);
 
   // set pin as reset switch of RN-42.
   pinMode(BT_RESETPIN,OUTPUT);
@@ -196,6 +197,9 @@ void setup(){
 
   // set pin as buttery LED indicator.
   pinMode(BUTTERY_LEDPIN,OUTPUT);
+
+  // set pin to reset switch reader with pullup resistor.
+  pinMode(RESET_SWITCH,INPUT_PULLUP);
 
   softwareSerial.begin(BT_BAUDRATE);
 #ifdef DEBUG
@@ -363,7 +367,7 @@ boolean keyPressed(int col, int row){
     digitalWrite(ROW_SELECTPINS[i],ROW_SWEEPBITS[row][i]);
   }
   
-  if(digitalRead(ROW_INPUTPIN)==HIGH){
+  if(digitalRead(ROW_INPUTPIN)==LOW){
     return true;
   }else{
     return false;
