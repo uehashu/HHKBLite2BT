@@ -1,28 +1,20 @@
-UNAME = ${shell uname}
-ifeq (${UNAME},Darwin)
-	ARDUINO_DIR = /Applications/Arduino.app/Contents/Resources/Java
-endif
-ifeq (${UNAME},Linux)
-	ARDUINO_DIR = /usr/share/arduino
-endif
-
-ARDMK_DIR = ~
+PROJECT_DIR = /Users/uehashu/Codes/Arduino/HHKBLite2BT/sketch/promicro8
+ARDMK_DIR = /usr/local/Cellar/arduino-mk/1.5
+AVR_TOOLS_DIR = /usr/local
 BOARD_TAG = promicro8
-TARGET = HHKBLite2BT
-ARDUINO_LIBS = 
-#MCU     = atmega328p
-#F_CPU   = 16000000
-ARDUINO_PORT = /dev/cu.usb*
+#MCU = atmega32u4
+#F_CPU = 16000000
+AVRDUDE = /usr/local/bin/avrdude
+MONITOR_PORT = /dev/cu.usb*
 
-ifeq (${UNAME},Darwin)
-	ARDMK_DIR = ~/sketchbook/Arduino-Makefile
-	ARDMK_PATH = $(ARDMK_DIR)/bin
-	#AVRDUDE_DIR = /usr/local/Cellar/avrdude/6.0.1
-	AVR_TOOLS_DIR = $(ARDUINO_DIR)/hardware/tools/avr
-	AVRDUDE = /usr/local/bin/avrdude
-	AVRDUDE_CONF = /usr/local/etc/avrdude.conf
-	include $(ARDMK_DIR)/Arduino.mk
-endif
-ifeq (${UNAME},Linux)
-	include ${ARDUINO_DIR}/Arduino.mk
-endif
+ARDUINO_SPARKFUN = $(ARDUINO_DIR)/hardware/sparkfun
+ARDUINO_PLATFORM_LIB_PATH = $(ARDUINO_SPARKFUN)/avr/libraries
+ARDUINO_VAR_PATH = $(ARDUINO_SPARKFUN)/avr/variants
+BOARDS_TXT = $(ARDUINO_SPARKFUN)/avr/boards.txt
+#ARDUINO_LIB_PATH = $(ARDUINO_LIB_PATH):$(ARDUINO_DIR)/hardware/arduino/avr/libraries
+#ARDUINO_LIB_PATH = $(ARDUINO_DIR)/hardware/arduino/avr/libraries
+ARDUINO_CORE_PATH = $(ARDUINO_SPARKFUN)/avr/cores/arduino
+BOOTLOADER_PARENT = $(ARDUINO_SPARKFUN)/avr/bootloaders
+ARDUINO_HEADER = $(ARDUINO_DIR)/hardware/arduino/avr/cores/arduino/Arduino.h
+
+include $(ARDMK_DIR)/Arduino.mk
