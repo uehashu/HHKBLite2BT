@@ -473,7 +473,7 @@ void sendReportHID(){
     softwareSerial.write(0x09);
     softwareSerial.write(0x01);
     softwareSerial.write(modifierData);
-    softwareSerial.write((byte)0x00);
+    softwareSerial.write((byte)(0x00));
     for(int i=0;i<6;i++){
       softwareSerial.write(keyData[i]);
     }

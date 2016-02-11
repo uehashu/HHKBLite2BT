@@ -1,6 +1,7 @@
 UNAME = ${shell uname}
 ifeq (${UNAME},Darwin)
-	ARDUINO_DIR = /Applications/Arduino.app/Contents/Resources/Java
+	#ARDUINO_DIR = /Applications/Arduino.app/Contents/Resources/Java
+	ARDUINO_DIR = /Applications/Arduino.app/Contents/Java
 endif
 ifeq (${UNAME},Linux)
 	ARDUINO_DIR = /usr/share/arduino
