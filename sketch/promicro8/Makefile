@@ -1,28 +1,19 @@
-UNAME = ${shell uname}
-ifeq (${UNAME},Darwin)
-	ARDUINO_DIR = /Applications/Arduino.app/Contents/Resources/Java
-endif
-ifeq (${UNAME},Linux)
-	ARDUINO_DIR = /usr/share/arduino
-endif
+# Makefile for SparkFun ProMicro33(https://www.sparkfun.com/products/12587)
+#
+# show details for valiables in
+# https://github.com/sudar/Arduino-Makefile/blob/master/arduino-mk-vars.md#compilerexecutable-variables
+#
+# library dependence
+# * Arduino IDE v1.6.7
+# * SparkFun Arduino Boards library v1.1.3 (https://github.com/sparkfun/Arduino_Boards)
 
-ARDMK_DIR = ~
-BOARD_TAG = promicro8
-TARGET = HHKBLite2BT
-ARDUINO_LIBS = 
-#MCU     = atmega328p
-#F_CPU   = 16000000
-ARDUINO_PORT = /dev/cu.usb*
+BOARD_TAG = promicro
+BOARD_SUB = 8MHzatmega32U4
+USB_PID	= 0x9204
+BOOTLOADER_PARENT = $(HOME)/Library/Arduino15/packages/SparkFun/hardware/avr/1.1.3/bootloaders
+BOARDS_TXT = $(HOME)/Library/Arduino15/packages/SparkFun/hardware/avr/1.1.3/boards.txt
+ARDUINO_VAR_PATH = /Users/ueha/Library/Arduino15/packages/SparkFun/hardware/avr/1.1.3/variants
+MONITOR_PORT = /dev/cu.usb*
+CXXFLAGS += -fno-threadsafe-statics
 
-ifeq (${UNAME},Darwin)
-	ARDMK_DIR = ~/sketchbook/Arduino-Makefile
-	ARDMK_PATH = $(ARDMK_DIR)/bin
-	#AVRDUDE_DIR = /usr/local/Cellar/avrdude/6.0.1
-	AVR_TOOLS_DIR = $(ARDUINO_DIR)/hardware/tools/avr
-	AVRDUDE = /usr/local/bin/avrdude
-	AVRDUDE_CONF = /usr/local/etc/avrdude.conf
-	include $(ARDMK_DIR)/Arduino.mk
-endif
-ifeq (${UNAME},Linux)
-	include ${ARDUINO_DIR}/Arduino.mk
-endif
+include $(ARDMK_DIR)/Arduino.mk
